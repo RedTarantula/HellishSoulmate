@@ -1,0 +1,17 @@
+Separar dialogo de cada personagem por # e as falas por enter
+exemplo:
+
+aaaaaaaaa
+bbbbbbbbbbb
+ccccccccc
+dddddddd
+#
+eeeeeee
+ffffffff
+gggggggggg
+hhhhhhhhh
+
+de a - d sao falas que ocorrerão no dialogo com o personagem 1, de e - h sao as falas do dialogo com o personagem 2
+
+favor manter padrao entre os dialogos: 1 fala do capetinha, 2 opçoes de fala personagem,
+ou todas as falas do capetinha, todas as falas do personagem, mas manter mesmo numero de falas para cada capetinha e mesmo numero de respostas

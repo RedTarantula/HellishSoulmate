@@ -40,5 +40,21 @@ public class TouchSystem : MonoBehaviour
             }
 
         }
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
+
+            if (hit)
+            {
+                if (hit.collider.tag == "Interacting")
+                {
+                    hit.collider.gameObject.GetComponent<Interacting>().OnEvent.Invoke();
+                }
+
+            }
+        }
     }
 }

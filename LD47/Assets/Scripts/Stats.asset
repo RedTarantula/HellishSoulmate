@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stats
   m_EditorClassIdentifier: 
   soul: 0
-  soulMult: 0
+  soulMult: 1
   calmToImpulsive: 0
   shyToConfindent: 0
   wildToCivilized: 0

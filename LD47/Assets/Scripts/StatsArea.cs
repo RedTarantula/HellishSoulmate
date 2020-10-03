@@ -1,18 +1,74 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class StatsArea : MonoBehaviour
+using UnityEngine.UI;
+using ConfigsSpace;
+public class StatsArea : Interacting
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("MainStats")]
+    public Image mainStatusImage;
+    public Bars mainBar;
+    public float mainValue;
+
+    [Header("SubStats")]
+    public Image subStatusImage;
+    public Bars subBar;
+    public float subValue;
+
+
+    [Header("Configs")]
+    public float multplier;
+
+    public Stats stats;
+
+    private Vector3 aux;
+
+    private void Start()
     {
-        
+        aux = mainStatusImage.rectTransform.localScale;
+
+        aux.x = stats.bars[(int)mainBar] / 100f;
+
+        mainStatusImage.rectTransform.localScale = aux;
+
+        aux.x = stats.bars[(int)subBar] / 100f;
+
+        subStatusImage.rectTransform.localScale = aux;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Click()
     {
-        
+        stats.bars[(int)mainBar] += mainValue * multplier;
+        stats.bars[(int)subBar] += subValue * multplier;
+
+        if (stats.bars[(int)mainBar] > 100)
+        {
+            stats.bars[(int)mainBar] = 100;
+        }
+        else if(stats.bars[(int)mainBar] < -100)
+        {
+            stats.bars[(int)mainBar] = -100;
+        }
+
+        if (stats.bars[(int)subBar] > 100)
+        {
+            stats.bars[(int)subBar] = 100;
+        }
+        else if (stats.bars[(int)subBar] < -100)
+        {
+            stats.bars[(int)subBar] = -100;
+        }
+
+        aux = mainStatusImage.rectTransform.localScale;
+
+        aux.x = stats.bars[(int)mainBar] / 100f;
+
+        mainStatusImage.rectTransform.localScale = aux;
+
+        aux.x = stats.bars[(int)subBar] / 100f;
+
+        subStatusImage.rectTransform.localScale = aux;
     }
+
+   
 }

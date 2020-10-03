@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soul: 0
   soulMult: 1
-  calmToImpulsive: 0
-  shyToConfindent: 0
-  wildToCivilized: 0
-  reservedToExhibitionist: 0
+  bars:
+  - 100
+  - -100
+  - 0
+  - 0

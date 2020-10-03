@@ -11,7 +11,14 @@ public class LeitorDeTxt
 
     public void SetIdioma(string linguagem)
     {
-        path = "Assets/Resources/Dialogos.txt";
+        switch (linguagem)
+        {
+            case "ptbr":
+                path = "Assets/Resources/Dialogos.txt";
+                break;
+            default:
+                break;
+        }
     }
 
     public void LerTxt ()

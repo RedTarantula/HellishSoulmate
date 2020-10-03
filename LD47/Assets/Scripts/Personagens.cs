@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class Personagens : MonoBehaviour
+public class Personagens : Interacting
 {
 
     public int personagem;
@@ -32,5 +32,10 @@ public class Personagens : MonoBehaviour
         dialogoPersonagem = leitorDeTxt.RetornaDialogo(personagem);
 
         dialogosSeparados = dialogoPersonagem.Split('\n');
+    }
+
+    public void DateDialogos()
+    {
+
     }
 }

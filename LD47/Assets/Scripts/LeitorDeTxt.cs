@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class LeitorDeTxt
+public class LeitorDeTxt : MonoBehaviour
 {
     string[] dialogos;
 
     string path;
+    void Start()
+    {
+        SetIdioma("ptbr");
+        LerTxt();
+    }
+    
 
     public void SetIdioma(string linguagem)
     {
@@ -23,6 +29,8 @@ public class LeitorDeTxt
 
     public void LerTxt ()
     {
+        
+
         StreamReader leitor = new StreamReader(path);
         dialogos = leitor.ReadToEnd().Split('#');
     }

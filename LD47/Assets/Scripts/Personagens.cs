@@ -6,7 +6,9 @@ using System.IO;
 public class Personagens : Interacting
 {
 
-    public int personagem;
+    //public int personagem;
+
+    public GameObject bar;
 
     string[] dialogosSeparados;
 
@@ -15,8 +17,7 @@ public class Personagens : Interacting
     // Start is called before the first frame update
     void Start()
     {
-        leitorDeTxt.SetIdioma("ptbr");
-        leitorDeTxt.LerTxt();
+        leitorDeTxt = Camera.main.GetComponent<LeitorDeTxt>();
     }
 
     // Update is called once per frame
@@ -25,13 +26,20 @@ public class Personagens : Interacting
         
     }
 
-    public void DefineDialogo()
+    public void DefineDialogo(int personagem)
     {
         string dialogoPersonagem;
 
-        dialogoPersonagem = leitorDeTxt.RetornaDialogo(personagem);
+        dialogoPersonagem = leitorDeTxt.RetornaDialogo(0);
 
         dialogosSeparados = dialogoPersonagem.Split('\n');
+
+        Debug.Log("clicou" + personagem);
+
+        bar.SetActive(false);
+
+        
+
     }
 
     public void DateDialogos()

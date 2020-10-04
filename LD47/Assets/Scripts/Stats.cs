@@ -15,4 +15,10 @@ public class Stats : ScriptableObject
     [Header("upgrades")]
     public bool IdleUpgrade;
     public float IdleSoul;
+
+    [Header("DateTimes")]
+    public int Tarrin;
+        public int akathiz;
+        public int zaros;
+        public int azza;
 }

@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 229098471}
   - component: {fileID: 229098472}
   m_Layer: 0
-  m_Name: Particle System (1)
+  m_Name: Click
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6928,7 +6928,7 @@ GameObject:
   - component: {fileID: 1629103786}
   - component: {fileID: 1629103785}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: SoulsUP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

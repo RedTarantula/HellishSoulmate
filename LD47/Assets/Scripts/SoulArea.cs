@@ -11,7 +11,7 @@ public class SoulArea : Interacting
     // Start is called before the first frame update
     void Start()
     {
-        
+        souls.text = "Souls: " + ((int)stats.soul).ToString();
     }
 
     // Update is called once per frame

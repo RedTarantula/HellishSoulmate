@@ -15,13 +15,20 @@ public class StatsArea : Interacting
     public Bars subBar;
     public float subValue;
 
+    [Header("Price")]
+    public float price;
+    public float upgradePrice;
 
     [Header("Configs")]
-    public float multplier;
+    public Multpliers multplier;
+    public TMPro.TextMeshProUGUI soulsText;
+    public float priceUpgradeMultiplier;
+    public float efectUpgradeMultiplier;
 
     public Stats stats;
 
     private Vector3 aux;
+    private bool owned;
 
     private void Start()
     {
@@ -38,14 +45,31 @@ public class StatsArea : Interacting
 
     public void Click()
     {
-        stats.bars[(int)mainBar] += mainValue * multplier;
-        stats.bars[(int)subBar] += subValue * multplier;
+        if(owned)
+        {
+            ChangeStat();
+        }
+        else
+        {
+            if(stats.soul > price)
+            {
+                stats.soul -= price;
+                owned = true;
+                ChangeSouls();
+            }
+        }
+    }
+
+    void ChangeStat()
+    {
+        stats.bars[(int)mainBar] += (mainValue/50f) * stats.statsMult[(int)multplier];
+        stats.bars[(int)subBar] += (subValue/50f) * stats.statsMult[(int)multplier];
 
         if (stats.bars[(int)mainBar] > 100)
         {
             stats.bars[(int)mainBar] = 100;
         }
-        else if(stats.bars[(int)mainBar] < -100)
+        else if (stats.bars[(int)mainBar] < -100)
         {
             stats.bars[(int)mainBar] = -100;
         }
@@ -59,6 +83,11 @@ public class StatsArea : Interacting
             stats.bars[(int)subBar] = -100;
         }
 
+        ChangeUI();
+    }
+
+    void ChangeUI()
+    {
         aux = mainStatusImage.rectTransform.localScale;
 
         aux.x = stats.bars[(int)mainBar] / 100f;
@@ -70,5 +99,20 @@ public class StatsArea : Interacting
         subStatusImage.rectTransform.localScale = aux;
     }
 
-   
+    void ChangeSouls()
+    {
+        soulsText.text = "Souls: " + stats.soul;
+    }
+
+    public void Upgrade()
+    {
+        if(stats.soul > upgradePrice)
+        {
+            stats.statsMult[(int)multplier] *= efectUpgradeMultiplier;
+            stats.soul -= upgradePrice;
+
+            upgradePrice *= priceUpgradeMultiplier;
+        }
+    }
+
 }

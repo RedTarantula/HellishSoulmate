@@ -9,4 +9,6 @@ public class Stats : ScriptableObject
     public float soulMult;
     [Range(-100f, 100f)]
     public float[] bars;
+
+    public float[] statsMult;
 }

@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c78637986e09d343be7a9bf9ac640ac, type: 3}
   m_Name: Stats
   m_EditorClassIdentifier: 
-  soul: 0
+  soul: 990187.06
   soulMult: 1
   bars:
-  - 100
-  - -100
   - 0
   - 0
+  - 0
+  - 0
+  statsMult:
+  - 1
+  - 1
+  - 1
+  - 1

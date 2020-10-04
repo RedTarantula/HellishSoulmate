@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interacting
+  - ZarosDate
+  - AzzaDate
+  - AkathizDate
+  - TarrinDate
   layers:
   - Default
   - TransparentFX

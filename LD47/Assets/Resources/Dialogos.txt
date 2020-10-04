@@ -1,17 +1,47 @@
-Separar dialogo de cada personagem por # e as falas por enter
-exemplo:
+Hey! So, how's your hellish day so far?
+Splendid! Just tormenting souls all day long to be able to share drinks with you. * ++ * I'll gladly share moments like this with you anytime.
+Exhausting! So many souls to torment today. * + * I'm one for hard-working demons like yourself.
+Pretty cool! Chilling for most of the day. * - * Not getting your hands dirty today, hm?
+I really need to take a vacation. Maybe we could travel together! * -- * A vacation? What's that?
 
-aaaaaaaaa
-bbbbbbbbbbb
-ccccccccc
-dddddddd
+Had some fun bringing souls to our little special hellish place, hm?
+Yes! We should torment some souls together at some point! * ++ * You're too nice! That is one of the kindest invitations I've ever received!
+Nothing is as rewarding as seeing those souls being tormented! * + * Why, I find my self obliged to agree with you there!
+Honestly, I prefer hanging out around here with you! * - * While taking some time to rest is important for the mind, you should always look up to tormenting souls!
+I straight up hate my job. * -- * Hm? Then where does your hellish pride resides?
 #
-eeeeeee
-ffffffff
-gggggggggg
-hhhhhhhhh
+I can see you can't take your dirty look off of me! What makes you dare to think you could have any of this hotness I constantly exhale, you imp?
+I have enough brain cells to see how brilliant and appealing you are! * ++ * Hoh! An imp that isn't completely ignorant, how uncommon!
+I could be of many uses! If you catch my drift. * + * Interesting... Very interesting!
+Oh, come on. How about you sush so we can hangout and have some drinks? * - * With an insignificant imp like yourself? Ha!
+Like I couldn't get you under my foot in a snap of fingers. * -- * Me? Under someone's foot? You joke my patience away, imp.
 
-de a - d sao falas que ocorrerão no dialogo com o personagem 1, de e - h sao as falas do dialogo com o personagem 2
+You know, this bar used to have a pole for dancing, but these imps have removed it.
+I wish I could've seen you using it. * ++ * You wouldn't have believed your eyes! There's nobody better than me when it comes to poledancing! Well... there's nobody better than me on anything... Ever. Still!
+They removed it? That's such a pointless idea! * + * RIGHT!? How else am I supposed to show my jaw-dropping moves!? Ignorant imps!
+Maybe nobody used it well enough? * - * OR MAYBE THEY WERE TOO DAMN BLIND TO SEE MY SUPERIOR MOVES!... DAMN THESE IMPS!
+Pole dancing? Pff! That's so silly! * -- * Hoh!? I see! So true talent can't be perceived by worthless imps like yourself. Understandable.
+#
+Yo, good timing! My fangs have been itching lately, I DESPERATELY need some relief here!
+You should totally bite me! * ++ * ARE YOU SERIOUS!? YOU'RE THE BEST!
+You could hunt some humans on the surface! * + * Hey! I like the way you think!
+Just bite your own flesh. Problem solved! * - * That's just SO boring!
+Aren't there any dentists around here? * -- * Dentists!? HELL NAH!
 
-favor manter padrao entre os dialogos: 1 fala do capetinha, 2 opçoes de fala personagem,
-ou todas as falas do capetinha, todas as falas do personagem, mas manter mesmo numero de falas para cada capetinha e mesmo numero de respostas
+I could REALLY use a good drink right now!
+Well, there's enough in my glass for the both of us! * ++ * DAYUM! You're so teasy today!
+Speak no more, I'll get you one right away! * + * I owe you one!
+We're in a bar, plenty of drinks around! * - * Yeah... You're not wrong.
+You should chill for a bit, I can see a huge pile of bottles behind you. * -- * Are you implying I have a drinking problem?
+#
+H-Hey! What d-do you think of my outfit?... Hehe!
+It's so cute! I love it! * ++ * R-Really!? Thank you!!!
+Amazing! It's so fancy! * + * I'm so glad you like it! Hehe!
+It looks rad as hell! So cool! * - * Rad? Me?
+Maybe it shows just a bit too much? * -- * Eh!?
+
+Oh! I totally saw a triclops raccoon today! They're so cute!
+They are cute, alright? But you're much, much cuter! * ++ * EEEH!? Y-You don't mean it!!!
+We should vist a demon petting zoo together! * + * AH! I-I WOULD LOVE TO!
+Demon raccoons? What the hell are those? * - * Whaaaaat? Have you never seen triclops raccoons!?
+The animals around here are kinda odd, don't you think? * -- * NOT AT ALL! I adore all of them! How could you say that!?

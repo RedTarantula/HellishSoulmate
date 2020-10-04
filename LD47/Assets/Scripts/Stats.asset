@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c78637986e09d343be7a9bf9ac640ac, type: 3}
   m_Name: Stats
   m_EditorClassIdentifier: 
-  soul: 990187.06
+  soul: 35
   soulMult: 1
   bars:
   - 0
@@ -24,3 +24,5 @@ MonoBehaviour:
   - 1
   - 1
   - 1
+  IdleUpgrade: 0
+  IdleSoul: 10

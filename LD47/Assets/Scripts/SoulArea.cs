@@ -17,7 +17,7 @@ public class SoulArea : Interacting
     // Update is called once per frame
     void Update()
     {
-      
+        SoulsPerSecond();
     }
 
 
@@ -30,6 +30,15 @@ public class SoulArea : Interacting
     public void ChangeUI()
     {
         souls.text = "Souls: " + ((int)stats.soul).ToString();
+    }
+
+    void SoulsPerSecond()
+    {
+        if (stats.IdleUpgrade)
+        {
+            stats.soul += stats.IdleSoul * Time.deltaTime;
+            ChangeUI();
+        }
     }
 
 }

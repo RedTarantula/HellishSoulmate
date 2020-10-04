@@ -11,4 +11,8 @@ public class Stats : ScriptableObject
     public float[] bars;
 
     public float[] statsMult;
+
+    [Header("upgrades")]
+    public bool IdleUpgrade;
+    public float IdleSoul;
 }

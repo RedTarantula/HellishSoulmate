@@ -7,12 +7,18 @@ public class Stats : ScriptableObject
 {
     public float soul;
     public float soulMult;
-    [Range(-100f,100f)]
-    public float calmToImpulsive;
     [Range(-100f, 100f)]
-    public float shyToConfindent;
-    [Range(-100f, 100f)]
-    public float wildToCivilized;
-    [Range(-100f, 100f)]
-    public float reservedToExhibitionist;
+    public float[] bars;
+
+    public float[] statsMult;
+
+    [Header("upgrades")]
+    public bool IdleUpgrade;
+    public float IdleSoul;
+
+    [Header("DateTimes")]
+    public int Tarrin;
+        public int akathiz;
+        public int zaros;
+        public int azza;
 }

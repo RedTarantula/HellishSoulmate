@@ -1,18 +1,120 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class StatsArea : MonoBehaviour
+using UnityEngine.UI;
+using ConfigsSpace;
+public class StatsArea : Interacting
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("MainStats")]
+    public Image mainStatusImage;
+    public Bars mainBar;
+    public float mainValue;
+
+    [Header("SubStats")]
+    public Image subStatusImage;
+    public Bars subBar;
+    public float subValue;
+
+    [Header("Price")]
+    public float price;
+    public float upgradePrice;
+
+    [Header("Configs")]
+    public Multpliers multplier;
+    public TMPro.TextMeshProUGUI soulsText;
+    public float priceUpgradeMultiplier;
+    public float efectUpgradeMultiplier;
+
+    public Stats stats;
+
+    private Vector3 aux;
+    private bool owned;
+
+    private void Start()
     {
-        
+        aux = mainStatusImage.rectTransform.localScale;
+
+        aux.x = stats.bars[(int)mainBar] / 100f;
+
+        mainStatusImage.rectTransform.localScale = aux;
+
+        aux.x = stats.bars[(int)subBar] / 100f;
+
+        subStatusImage.rectTransform.localScale = aux;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Click()
     {
-        
+        if(owned)
+        {
+            ChangeStat();
+        }
+        else
+        {
+            if(stats.soul > price)
+            {
+                stats.soul -= price;
+                owned = true;
+                ChangeSouls();
+            }
+        }
     }
+
+    void ChangeStat()
+    {
+        stats.bars[(int)mainBar] += (mainValue/50f) * stats.statsMult[(int)multplier];
+        stats.bars[(int)subBar] += (subValue/50f) * stats.statsMult[(int)multplier];
+
+        if (stats.bars[(int)mainBar] > 100)
+        {
+            stats.bars[(int)mainBar] = 100;
+        }
+        else if (stats.bars[(int)mainBar] < -100)
+        {
+            stats.bars[(int)mainBar] = -100;
+        }
+
+        if (stats.bars[(int)subBar] > 100)
+        {
+            stats.bars[(int)subBar] = 100;
+        }
+        else if (stats.bars[(int)subBar] < -100)
+        {
+            stats.bars[(int)subBar] = -100;
+        }
+
+        ChangeUI();
+    }
+
+    void ChangeUI()
+    {
+        aux = mainStatusImage.rectTransform.localScale;
+
+        aux.x = stats.bars[(int)mainBar] / 100f;
+
+        mainStatusImage.rectTransform.localScale = aux;
+
+        aux.x = stats.bars[(int)subBar] / 100f;
+
+        subStatusImage.rectTransform.localScale = aux;
+    }
+
+    void ChangeSouls()
+    {
+        soulsText.text = "Souls: " + stats.soul;
+    }
+
+    public void Upgrade()
+    {
+        if(stats.soul > upgradePrice)
+        {
+            stats.statsMult[(int)multplier] *= efectUpgradeMultiplier;
+            stats.soul -= upgradePrice;
+
+            upgradePrice *= priceUpgradeMultiplier;
+        }
+    }
+
+  
+
 }

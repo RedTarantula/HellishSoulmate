@@ -20,6 +20,12 @@ public class Stats : ScriptableObject
 
     [Header("DateTimes")]
     public int[] DateTimes;
+
+    [Header("Presentes")] 
+    public int isqueiro;
+    public int florMurcha;
+    public int lingerie;
+    public int ursinho;
 }
 
 

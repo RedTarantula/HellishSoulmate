@@ -33,6 +33,7 @@ public class Dialogos : Interacting
     [Header("Botoes")]
     public GameObject botoesRespostas;
     public GameObject okReacao;
+    public GameObject botoesPresentes;
 
 
 
@@ -59,11 +60,22 @@ public class Dialogos : Interacting
     [Header("Personagem perto")]
     public GameObject tarrinDate, azzaDate, akathizDate, zarosDate;
 
+    [Header("Sprites Personagens")]
+    public Sprite tarrinN;
+    public Sprite tarrinF, tarrinP;
+    public Sprite azzaN, azzaF, azzaP;
+    public Sprite akathizN, akathizF, akathizP;
+    public Sprite zarosN, zarosF, zarosP;
+    
+
 
 
 
     int[] presentes;
 
+
+    GameObject dateSprites;
+    Sprite dateF, dateN, dateP;
 
 
     string[] dialogosSeparados;
@@ -111,26 +123,38 @@ public class Dialogos : Interacting
         {  
             case 0:
                 tarrinDate.SetActive(true);
-
+                dateSprites = tarrinDate;
                 baseDate = baseTarrin;
+                dateN = tarrinN;
+                dateF = tarrinF;
+                dateP = tarrinP;
                 break;
             
             case 1: 
                 akathizDate.SetActive(true);
-
+                dateSprites = akathizDate;
                 baseDate = baseAkathiz;
+                dateN = akathizN;
+                dateF = akathizF;
+                dateP = akathizP;
                 break;
 
             case 2:
                 zarosDate.SetActive(true);
-
+                dateSprites = zarosDate;
                 baseDate = baseZaros;
+                dateN = zarosN;
+                dateF = zarosF;
+                dateP = zarosP;
                 break;
 
             case 3:
                 azzaDate.SetActive(true);
-
+                dateSprites = azzaDate;
                 baseDate = baseAzza;
+                dateN = azzaN;
+                dateF = azzaF;
+                dateP = azzaP;
                 break;
 
             default:
@@ -139,13 +163,14 @@ public class Dialogos : Interacting
         chance = baseDate;
 
         date = personagem;
+
         DateDialogos();
 
     }
 
     public void DateDialogos()
     {
-        
+        dateSprites.GetComponent<SpriteRenderer>().sprite = dateN; 
         botoesRespostas.SetActive(true);
         okReacao.SetActive(false);
 
@@ -190,11 +215,15 @@ public class Dialogos : Interacting
             case "++":
                 chance = chance + (baseDate/(acertouResposta/2));
 
+                dateSprites.GetComponent<SpriteRenderer>().sprite = dateF; 
+
                 Debug.Log("foi ++");   
                 break;
 
             case "+":
                 chance = chance + (baseDate/acertouResposta);
+
+                dateSprites.GetComponent<SpriteRenderer>().sprite = dateN; 
 
                 Debug.Log("foi +");
                 break;
@@ -202,11 +231,15 @@ public class Dialogos : Interacting
             case "-":
                 chance = chance + (baseDate/errouResposta);
 
+                dateSprites.GetComponent<SpriteRenderer>().sprite = dateN; 
+
                 Debug.Log("foi -");
                 break;
 
             case "--":
                 chance = chance + (baseDate/(errouResposta/2));
+
+                dateSprites.GetComponent<SpriteRenderer>().sprite = dateP; 
 
                 Debug.Log("foi --");
                 break;
@@ -229,11 +262,15 @@ public class Dialogos : Interacting
            case "++":
                 chance = chance + (baseDate/(acertouResposta/2));
 
+                dateSprites.GetComponent<SpriteRenderer>().sprite = dateF; 
+
                 Debug.Log("foi ++");   
                 break;
 
             case "+":
                 chance = chance + (baseDate/acertouResposta);
+
+                dateSprites.GetComponent<SpriteRenderer>().sprite = dateN; 
 
                 Debug.Log("foi +");
                 break;
@@ -241,11 +278,15 @@ public class Dialogos : Interacting
             case "-":
                 chance = chance + (baseDate/errouResposta);
 
+                dateSprites.GetComponent<SpriteRenderer>().sprite = dateN; 
+
                 Debug.Log("foi -");
                 break;
 
             case "--":
                 chance = chance + (baseDate/(errouResposta/2));
+
+                dateSprites.GetComponent<SpriteRenderer>().sprite = dateP; 
 
                 Debug.Log("foi --");
                 break;
@@ -267,11 +308,15 @@ public class Dialogos : Interacting
             case "++":
                 chance = chance + (baseDate/(acertouResposta/2));
 
+                dateSprites.GetComponent<SpriteRenderer>().sprite = dateF; 
+
                 Debug.Log("foi ++");   
                 break;
 
             case "+":
                 chance = chance + (baseDate/acertouResposta);
+
+                dateSprites.GetComponent<SpriteRenderer>().sprite = dateN; 
 
                 Debug.Log("foi +");
                 break;
@@ -279,11 +324,15 @@ public class Dialogos : Interacting
             case "-":
                 chance = chance + (baseDate/errouResposta);
 
+                dateSprites.GetComponent<SpriteRenderer>().sprite = dateN; 
+
                 Debug.Log("foi -");
                 break;
 
             case "--":
                 chance = chance + (baseDate/(errouResposta/2));
+
+                dateSprites.GetComponent<SpriteRenderer>().sprite = dateP; 
 
                 Debug.Log("foi --");
                 break;
@@ -305,11 +354,15 @@ public class Dialogos : Interacting
             case "++":
                 chance = chance + (baseDate/(acertouResposta/2));
 
+                dateSprites.GetComponent<SpriteRenderer>().sprite = dateF; 
+
                 Debug.Log("foi ++");   
                 break;
 
             case "+":
                 chance = chance + (baseDate/acertouResposta);
+
+                dateSprites.GetComponent<SpriteRenderer>().sprite = dateN; 
 
                 Debug.Log("foi +");
                 break;
@@ -317,11 +370,15 @@ public class Dialogos : Interacting
             case "-":
                 chance = chance + (baseDate/errouResposta);
 
+                dateSprites.GetComponent<SpriteRenderer>().sprite = dateN; 
+
                 Debug.Log("foi -");
                 break;
 
             case "--":
                 chance = chance + (baseDate/(errouResposta/2));
+
+                dateSprites.GetComponent<SpriteRenderer>().sprite = dateP; 
 
                 Debug.Log("foi --");
                 break;
@@ -332,7 +389,7 @@ public class Dialogos : Interacting
         botoesRespostas.SetActive(false);
         okReacao.SetActive(true);
 
-        falaCapetinha.SetText(resp1[2]);
+        falaCapetinha.SetText(resp4[2]);
     }
     public void Next()
     {
@@ -354,6 +411,18 @@ public class Dialogos : Interacting
     public void Presente()
     {
 
+        okReacao.SetActive(false);
+        botoesPresentes.SetActive(true);
+        //fav:
+        //0 = flores murchas
+        //1 = lingerie
+        //2 = isqueiro
+        //3 = ursinho
+        //hate:
+        //0 = isqueiro
+        //1 = flores murchas
+        //2 = ursinho
+        //3 = lingerie
     }
     //stat.DateTimes[date]++;
 }

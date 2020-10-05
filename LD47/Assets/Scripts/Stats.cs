@@ -15,6 +15,13 @@ public class Stats : ScriptableObject
     [Header("upgrades")]
     public bool IdleUpgrade;
     public float IdleSoul;
+    public bool soulsPerClickUpgrade;
+    public float soulsPerClickValue;
+    public bool scoreMinigameUpgrade;
+    public float scoreMinigameValue;
+
+    public bool attributeUpgrade;
+    public float attributeValue;
     public int resetTimes;
 
 

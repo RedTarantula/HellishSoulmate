@@ -62,8 +62,13 @@ public class StatsArea : Interacting
 
     void ChangeStat()
     {
-        stats.bars[(int)mainBar] += (mainValue/50f) * stats.statsMult[(int)multplier];
-        stats.bars[(int)subBar] += (subValue/50f) * stats.statsMult[(int)multplier];
+        if(stats.attributeUpgrade)
+        {
+            stats.bars[(int)mainBar] += stats.attributeValue/50f;
+        
+        }
+        stats.bars[(int)mainBar] += (mainValue/50f) * stats.statsMult[(int)multplier] * (stats.resetTimes*stats.resetTimes);
+        stats.bars[(int)subBar] += (subValue/50f) * stats.statsMult[(int)multplier] * (stats.resetTimes*stats.resetTimes);
 
         if (stats.bars[(int)mainBar] > 100)
         {
@@ -101,17 +106,19 @@ public class StatsArea : Interacting
 
     void ChangeSouls()
     {
-        soulsText.text = "Souls: " + stats.soul;
+        soulsText.text = "Souls: " + (int)stats.soul;
     }
 
     public void Upgrade()
     {
         if(stats.soul > upgradePrice)
         {
-            stats.statsMult[(int)multplier] *= efectUpgradeMultiplier;
             stats.soul -= upgradePrice;
+            stats.statsMult[(int)multplier] *= efectUpgradeMultiplier;
 
             upgradePrice *= priceUpgradeMultiplier;
+
+            ChangeSouls();
         }
     }
 

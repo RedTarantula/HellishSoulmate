@@ -98,6 +98,10 @@ public class Dialogos : Interacting
     int presentePreferido, presenteOdiado;
     int presente;
 
+    int atributoPreferido;
+    int multiplierAtributo;
+    int deuDate;
+
 
     LeitorDeTxt leitorDeTxt;
 
@@ -133,6 +137,8 @@ public class Dialogos : Interacting
                 dateP = tarrinP;
                 presentePreferido = 0;
                 presenteOdiado = 2;
+                atributoPreferido = 2;
+                multiplierAtributo = 1;
                 break;
             
             case 1: 
@@ -144,6 +150,8 @@ public class Dialogos : Interacting
                 dateP = akathizP;
                 presentePreferido = 1;
                 presenteOdiado = 0;
+                atributoPreferido = 3;
+                multiplierAtributo = 1;
                 break;
 
             case 2:
@@ -155,6 +163,8 @@ public class Dialogos : Interacting
                 dateP = zarosP;
                 presentePreferido = 2;
                 presenteOdiado = 3;
+                atributoPreferido = 0;
+                multiplierAtributo = 1;
                 break;
 
             case 3:
@@ -166,6 +176,8 @@ public class Dialogos : Interacting
                 dateP = azzaP;
                 presentePreferido = 3;
                 presenteOdiado = 1;
+                atributoPreferido = 1;
+                multiplierAtributo = -1;
                 break;
 
             default:
@@ -438,57 +450,110 @@ public class Dialogos : Interacting
     public void FlorMurcha()
     {
         presente = 0;
-        if (presente == presenteOdiado)
-        {
-            chance = chance - (baseDate/2);
-        }
-        else if (presente == presentePreferido)
-        {
-            chance = chance + (baseDate/2);
+
+        if(stat.florMurcha > 0){
+
+            if (presente == presenteOdiado)
+            {
+                chance = chance - (baseDate/2);
+            }
+            else if (presente == presentePreferido)
+            {
+                chance = chance + (baseDate/2);
+            }
+
+            stat.florMurcha--;
+
+            CalculaStatus();
         }
     }
     public void Lingerie()
     {
         presente = 1;
-        if (presente == presenteOdiado)
-        {
-            chance = chance - (baseDate/2);
-        }
-        else if (presente == presentePreferido)
-        {
-            chance = chance + (baseDate/2);
+        if(stat.lingerie > 0){
+
+            if (presente == presenteOdiado)
+            {
+                chance = chance - (baseDate/2);
+            }
+            else if (presente == presentePreferido)
+            {
+                chance = chance + (baseDate/2);
+            }
+            
+            stat.lingerie--;
+
+            CalculaStatus();
         }
     }
     public void Isqueiro()
     {
         presente = 2;
-        if (presente == presenteOdiado)
-        {
-            chance = chance - (baseDate/2);
-        }
-        else if (presente == presentePreferido)
-        {
-            chance = chance + (baseDate/2);
+        if(stat.isqueiro > 0){
+
+            if (presente == presenteOdiado)
+            {
+                chance = chance - (baseDate/2);
+            }
+            else if (presente == presentePreferido)
+            {
+                chance = chance + (baseDate/2);
+            }
+            
+            stat.isqueiro--;
+
+            CalculaStatus();
         }
     }
     public void Ursinho()
     {
         presente = 3;
-        if (presente == presenteOdiado)
-        {
-            chance = chance - (baseDate/2);
-        }
-        else if (presente == presentePreferido)
-        {
-            chance = chance + (baseDate/2);
+        if(stat.ursinho > 0){
+
+            if (presente == presenteOdiado)
+            {
+                chance = chance - (baseDate/2);
+            }
+            else if (presente == presentePreferido)
+            {
+                chance = chance + (baseDate/2);
+            }
+            
+            stat.ursinho--;
+
+            CalculaStatus();
         }
     }
     public void presenteNeutro()
     {
+        if(stat.drink > 0){
+            
+            stat.drink--;
+
+            CalculaStatus();
+        }
 
     }
     public void CalculaStatus()
     {
+        //zaros: impulsive = 0
+        //akathiz: exhibitionist = 3
+        //tarrin: civilized = 2
+        //azza: shy = 1
+        chance = chance + ((stat.bars[atributoPreferido] * multiplierAtributo)/5);
+
+        Debug.Log(chance);
+
+        deuDate = Random.Range(0, 100);
+
+        if (deuDate <= chance )
+        {
+            Debug.Log("datou");
+        }
+        else
+        {
+            Debug.Log("nao datou");
+        }
 
     }
     //stat.DateTimes[date]++;

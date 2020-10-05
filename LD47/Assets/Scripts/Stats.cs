@@ -33,6 +33,7 @@ public class Stats : ScriptableObject
     public int florMurcha;
     public int lingerie;
     public int ursinho;
+    public int drink;
 }
 
 

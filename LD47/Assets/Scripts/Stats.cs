@@ -19,7 +19,6 @@ public class Stats : ScriptableObject
     public float soulsPerClickValue;
     public bool scoreMinigameUpgrade;
     public float scoreMinigameValue;
-
     public bool attributeUpgrade;
     public float attributeValue;
     public int resetTimes;

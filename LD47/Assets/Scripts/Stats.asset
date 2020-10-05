@@ -26,7 +26,7 @@ MonoBehaviour:
   - 1
   IdleUpgrade: 0
   IdleSoul: 10
-  soulsPerClickUpgrade: 0
+  soulsPerClickUpgrade: 1
   soulsPerClickValue: 100
   scoreMinigameUpgrade: 0
   scoreMinigameValue: 10

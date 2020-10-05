@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class MiniGameUI : MonoBehaviour
@@ -9,6 +11,9 @@ public class MiniGameUI : MonoBehaviour
     
     [SerializeField]
     private TextMeshProUGUI _timeText = default;
+    [Header("Start Game")]
+    [SerializeField]
+    private GameObject _startGameCanvas = default;
     [Header("End Game")]
     [SerializeField]
     private GameObject _endGameCanvas = default;
@@ -24,16 +29,26 @@ public class MiniGameUI : MonoBehaviour
     private MiniGameController _controller;
     private AudioSource _audioSource;
 
+    private bool _hasStarted;
+
     void Start()
     {
         _audioSource = GetComponent<AudioSource>();
         _controller = MiniGameController.Instance;
         _controller.OnEndGame += HandleEndGame;
         _endGameCanvas.SetActive(false);
+        _hasStarted = false;
     }
 
     void Update()
     {
+        if (!_hasStarted && Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            _controller.StartGame();
+            _startGameCanvas.SetActive(false);
+            _hasStarted = true;
+        }
+        
         UpdateTimeText();
     }
 
@@ -51,6 +66,7 @@ public class MiniGameUI : MonoBehaviour
     IEnumerator EndCoroutine()
     {
         _endGameButton.SetActive(false);
+        _endGameButton.GetComponent<Button>().onClick.AddListener(() => SceneManager.LoadScene("Aline"));
         
         _endScoreText.text = "";
         _endPresentsText.text = "";

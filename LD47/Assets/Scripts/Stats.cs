@@ -17,8 +17,5 @@ public class Stats : ScriptableObject
     public float IdleSoul;
 
     [Header("DateTimes")]
-    public int Tarrin;
-        public int akathiz;
-        public int zaros;
-        public int azza;
+    public int[] DateTimes;
 }

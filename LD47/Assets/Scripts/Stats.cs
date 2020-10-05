@@ -24,6 +24,8 @@ public class Stats : ScriptableObject
     public float attributeValue;
     public int resetTimes;
 
+    [Header("Money")]
+    public int tickets;
 
     [Header("DateTimes")]
     public int[] DateTimes;

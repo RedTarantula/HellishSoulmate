@@ -33,6 +33,7 @@ MonoBehaviour:
   attributeUpgrade: 0
   attributeValue: 1
   resetTimes: 1
+  tickets: 3
   DateTimes: 00000000000000000000000000000000
   isqueiro: 9
   florMurcha: 10

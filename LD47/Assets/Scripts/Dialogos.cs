@@ -95,6 +95,9 @@ public class Dialogos : Interacting
 
     float baseDate, chance;
 
+    int presentePreferido, presenteOdiado;
+    int presente;
+
 
     LeitorDeTxt leitorDeTxt;
 
@@ -128,6 +131,8 @@ public class Dialogos : Interacting
                 dateN = tarrinN;
                 dateF = tarrinF;
                 dateP = tarrinP;
+                presentePreferido = 0;
+                presenteOdiado = 2;
                 break;
             
             case 1: 
@@ -137,6 +142,8 @@ public class Dialogos : Interacting
                 dateN = akathizN;
                 dateF = akathizF;
                 dateP = akathizP;
+                presentePreferido = 1;
+                presenteOdiado = 0;
                 break;
 
             case 2:
@@ -146,6 +153,8 @@ public class Dialogos : Interacting
                 dateN = zarosN;
                 dateF = zarosF;
                 dateP = zarosP;
+                presentePreferido = 2;
+                presenteOdiado = 3;
                 break;
 
             case 3:
@@ -155,6 +164,8 @@ public class Dialogos : Interacting
                 dateN = azzaN;
                 dateF = azzaF;
                 dateP = azzaP;
+                presentePreferido = 3;
+                presenteOdiado = 1;
                 break;
 
             default:
@@ -423,6 +434,62 @@ public class Dialogos : Interacting
         //1 = flores murchas
         //2 = ursinho
         //3 = lingerie
+    }
+    public void FlorMurcha()
+    {
+        presente = 0;
+        if (presente == presenteOdiado)
+        {
+            chance = chance - (baseDate/2);
+        }
+        else if (presente == presentePreferido)
+        {
+            chance = chance + (baseDate/2);
+        }
+    }
+    public void Lingerie()
+    {
+        presente = 1;
+        if (presente == presenteOdiado)
+        {
+            chance = chance - (baseDate/2);
+        }
+        else if (presente == presentePreferido)
+        {
+            chance = chance + (baseDate/2);
+        }
+    }
+    public void Isqueiro()
+    {
+        presente = 2;
+        if (presente == presenteOdiado)
+        {
+            chance = chance - (baseDate/2);
+        }
+        else if (presente == presentePreferido)
+        {
+            chance = chance + (baseDate/2);
+        }
+    }
+    public void Ursinho()
+    {
+        presente = 3;
+        if (presente == presenteOdiado)
+        {
+            chance = chance - (baseDate/2);
+        }
+        else if (presente == presentePreferido)
+        {
+            chance = chance + (baseDate/2);
+        }
+    }
+    public void presenteNeutro()
+    {
+
+    }
+    public void CalculaStatus()
+    {
+
     }
     //stat.DateTimes[date]++;
 }

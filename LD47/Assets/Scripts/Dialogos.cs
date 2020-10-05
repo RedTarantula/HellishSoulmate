@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using ConfigsSpace;
 
 /*
@@ -25,6 +26,7 @@ public class Dialogos : Interacting
     public Stats stat;
     public GameObject canvas;
     public GameObject bar;
+    public GameObject UICanvas;
     public int nfalas;
 
 
@@ -34,6 +36,17 @@ public class Dialogos : Interacting
     public GameObject botoesRespostas;
     public GameObject okReacao;
     public GameObject botoesPresentes;
+    public GameObject botaoFimDoDate;
+
+
+
+
+    [Header("Texto dos botoes de presente")]
+    public TMPro.TextMeshProUGUI presenteFlorMurcha;
+    public TMPro.TextMeshProUGUI presenteLingerie;
+    public TMPro.TextMeshProUGUI presenteIsqueiro;
+    public TMPro.TextMeshProUGUI presenteUrsinho;
+    public TMPro.TextMeshProUGUI presenteDrink;
 
 
 
@@ -101,6 +114,7 @@ public class Dialogos : Interacting
     int atributoPreferido;
     int multiplierAtributo;
     int deuDate;
+    string falaPosDate;
 
 
     LeitorDeTxt leitorDeTxt;
@@ -116,9 +130,11 @@ public class Dialogos : Interacting
 
     public void DefineDialogo(int personagem)
     {
+        UICanvas.SetActive(false);
+
         string dialogoPersonagem;
 
-        dialogoPersonagem = leitorDeTxt.RetornaDialogo(0);
+        dialogoPersonagem = leitorDeTxt.RetornaDialogo(personagem);
 
         dialogosSeparados = dialogoPersonagem.Split('\n');
 
@@ -436,6 +452,18 @@ public class Dialogos : Interacting
 
         okReacao.SetActive(false);
         botoesPresentes.SetActive(true);
+
+        falaCapetinha.SetText("(Give him a Gift)");
+
+        presenteFlorMurcha.SetText("X " + stat.florMurcha); 
+
+        presenteLingerie.SetText("X " + stat.lingerie);
+
+        presenteIsqueiro.SetText("X " + stat.isqueiro);
+
+        presenteUrsinho.SetText("X " + stat.ursinho);
+
+        presenteDrink.SetText("X " + stat.drink);
         //fav:
         //0 = flores murchas
         //1 = lingerie
@@ -450,6 +478,8 @@ public class Dialogos : Interacting
     public void FlorMurcha()
     {
         presente = 0;
+
+        
 
         if(stat.florMurcha > 0){
 
@@ -470,6 +500,9 @@ public class Dialogos : Interacting
     public void Lingerie()
     {
         presente = 1;
+
+        
+
         if(stat.lingerie > 0){
 
             if (presente == presenteOdiado)
@@ -489,6 +522,9 @@ public class Dialogos : Interacting
     public void Isqueiro()
     {
         presente = 2;
+
+        
+
         if(stat.isqueiro > 0){
 
             if (presente == presenteOdiado)
@@ -508,6 +544,9 @@ public class Dialogos : Interacting
     public void Ursinho()
     {
         presente = 3;
+
+        
+
         if(stat.ursinho > 0){
 
             if (presente == presenteOdiado)
@@ -526,6 +565,7 @@ public class Dialogos : Interacting
     }
     public void presenteNeutro()
     {
+        
         if(stat.drink > 0){
             
             stat.drink--;
@@ -549,12 +589,47 @@ public class Dialogos : Interacting
         if (deuDate <= chance )
         {
             Debug.Log("datou");
+            stat.DateTimes[date]++;
+
+            switch(date)
+            {
+                case 0:
+                    stat.scoreMinigameUpgrade = true;
+                    falaPosDate = "(Your MiniGame bonus is " + stat.scoreMinigameValue.ToString() + " now)";
+                    break;
+                case 1:
+                    stat.attributeUpgrade = true;
+                    falaPosDate = "(Your Attribute bonus is " + stat.attributeValue.ToString() + " now)";
+                    break;
+                case 2:
+                    stat.IdleUpgrade = true;
+                    falaPosDate = "(Your Idle bonus is " + stat.IdleSoul.ToString() + " now)";
+                    break;
+                case 3:
+                    stat.soulsPerClickUpgrade = true;
+                    falaPosDate = "(Your Souls per Click bonus is " + stat.soulsPerClickValue.ToString() + " now)";
+                    break;
+                default:
+                    break;
+
+            }
         }
         else
         {
-            Debug.Log("nao datou");
+            falaPosDate = "(He's not happy enough to go out with you)";
         }
+        botoesPresentes.SetActive(false);
+        FimDoDate();
+        
 
     }
-    //stat.DateTimes[date]++;
+    public void FimDoDate()
+    {
+        falaCapetinha.SetText(falaPosDate);
+        botaoFimDoDate.SetActive(true);
+    }
+    public void SaiDoDate()
+    {
+        SceneManager.LoadScene("Aline");
+    }
 }

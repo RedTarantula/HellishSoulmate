@@ -11,7 +11,7 @@ public class StoreUI : MonoBehaviour
     [SerializeField]
     private Stats _stats = default;
 
-    public GameObject voltaUI;
+    public GameObject voltaUI, bar;
 
     [Header("Tickets")]
     [SerializeField]
@@ -88,6 +88,7 @@ public class StoreUI : MonoBehaviour
 
     void HandleClose()
     {
+        bar.SetActive(true);
         voltaUI.SetActive(true);
         gameObject.SetActive(false);
     }

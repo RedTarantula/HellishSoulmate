@@ -1138,6 +1138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abreLoja: {fileID: 1794442013}
   tiraUI: {fileID: 291050296}
+  boyzins: {fileID: 1738022720}
 --- !u!1 &444700750
 GameObject:
   m_ObjectHideFlags: 0
@@ -7178,5 +7179,10 @@ PrefabInstance:
       propertyPath: voltaUI
       value: 
       objectReference: {fileID: 291050296}
+    - target: {fileID: 8776003013880040718, guid: 07d1bdddd1318ef45969f90f9c1ac260,
+        type: 3}
+      propertyPath: bar
+      value: 
+      objectReference: {fileID: 1738022720}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07d1bdddd1318ef45969f90f9c1ac260, type: 3}

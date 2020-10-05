@@ -386,11 +386,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'AEHO
-
-    MAMA OS BROTHER
-
-    LOCURA'
+  m_text: "Aline Kaiper\nProgramming\n\nArtur Nista\nProgramming\n\nFernanda Mello\nArt\n\nHenrique
+    Souza\nProgramming\n\nJo\xE3o Rothmann\nGame Design, UI & Narrative\n\nLuiza
+    M\xFCller\nArt\n\nVin\xEDcius Costa\nMusic & SFX"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87476aad4c3519e4685b0719caeb6bb2, type: 2}
   m_sharedMaterial: {fileID: 7315180056386581223, guid: 87476aad4c3519e4685b0719caeb6bb2,
@@ -419,14 +417,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 22.14
+  m_fontSizeBase: 22.14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_textAlignment: 257
+  m_fontStyle: 1
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -460,12 +458,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 677824609}
-    characterCount: 27
+    characterCount: 186
     spriteCount: 0
-    spaceCount: 4
-    wordCount: 5
+    spaceCount: 32
+    wordCount: 25
     linkCount: 0
-    lineCount: 3
+    lineCount: 20
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

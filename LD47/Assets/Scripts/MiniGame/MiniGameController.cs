@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct SpawnItem
+{
+    public GameObject Prefab;
+    public int Chance;
+}
+
 public class MiniGameController : MonoBehaviour
 {
     
@@ -21,7 +28,7 @@ public class MiniGameController : MonoBehaviour
     [SerializeField]
     private float _spawnDelay = .5f;
     [SerializeField]
-    private List<GameObject> _spawnObjects = default;
+    private List<SpawnItem> _spawnObjects = default;
     [SerializeField]
     private Vector2 _spawnPointRight = default;
     [SerializeField]
@@ -73,7 +80,7 @@ public class MiniGameController : MonoBehaviour
     {
         while (true)
         {
-            GameObject spawnPrefab = _spawnObjects[Random.Range(0, _spawnObjects.Count)];
+            GameObject spawnPrefab = GetSpawnPrefab();
             Vector3 spawnPoint;
             if (Random.value > 0.5f) spawnPoint = _spawnPointRight;
             else spawnPoint = _spawnPointLeft;
@@ -86,6 +93,31 @@ public class MiniGameController : MonoBehaviour
             
             yield return new WaitForSeconds(_spawnDelay);
         }
+    }
+    
+
+	/// <summary>Get an item from the drop table.</summary>
+	/// <returns>Returns the item prefab OR null if none is dropped.</returns>
+    public GameObject GetSpawnPrefab()
+    {
+        int itemsAmountSum = 0;
+        foreach (SpawnItem item in _spawnObjects)
+        {
+            itemsAmountSum += item.Chance;
+        }
+
+        int dropAmount = Random.Range(0, itemsAmountSum);
+        foreach (SpawnItem item in _spawnObjects)
+        {
+            if(dropAmount <= item.Chance)
+            {
+                return item.Prefab;
+            }
+
+            dropAmount -= item.Chance;
+        }
+
+        return null;
     }
 
     public void AddScore(int score)

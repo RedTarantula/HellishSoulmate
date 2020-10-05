@@ -165,9 +165,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a472d66d7f85da9428b7e8c0601bd2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _taps: 2
   _pullSpeed: 5
-  _minSpeed: 4
-  _maxSpeed: 6
+  _minSpeed: 2
+  _maxSpeed: 8
+  _tapEffet: {fileID: 6149635812698235849, guid: 1dd7761da0f8718449d9af9a338e50ad,
+    type: 3}
+  _openEffet: {fileID: 450580492757584221, guid: 28e71ffc5ca5eb447b678716c5050994,
+    type: 3}
   _timeLoss: 1
 --- !u!114 &-4971862092774918786
 MonoBehaviour:
@@ -181,4 +186,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c049989ea19eb64ea59ca6939250a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _time: 5
+  _time: 15

@@ -16,6 +16,8 @@ public class MiniGameThrower : MonoBehaviour
     private Camera _mainCamera;
     private MiniGameController _controller;
 
+    public bool IsActive;
+
     void Awake()
     {
         _mainCamera = Camera.main;
@@ -29,6 +31,7 @@ public class MiniGameThrower : MonoBehaviour
 
     void Update()
     {
+        if (!IsActive) return;
         if (!_controller.GameIsRunning) return;
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {

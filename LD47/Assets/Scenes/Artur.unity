@@ -1699,6 +1699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeText: {fileID: 186734674}
+  _tapCanvas: {fileID: 0}
   _endGameCanvas: {fileID: 1606884184}
   _endScoreText: {fileID: 305220577}
   _endPresentsText: {fileID: 139421649}

@@ -33,6 +33,7 @@ public class Dialogos : Interacting
     [Header("Botoes")]
     public GameObject botoesRespostas;
     public GameObject okReacao;
+    public GameObject botoesPresentes;
 
 
 
@@ -409,6 +410,9 @@ public class Dialogos : Interacting
     }
     public void Presente()
     {
+
+        okReacao.SetActive(false);
+        botoesPresentes.SetActive(true);
         //fav:
         //0 = flores murchas
         //1 = lingerie

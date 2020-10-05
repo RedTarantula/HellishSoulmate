@@ -67,8 +67,8 @@ public class StatsArea : Interacting
             stats.bars[(int)mainBar] += stats.attributeValue/50f;
         
         }
-        stats.bars[(int)mainBar] += (mainValue/50f) * stats.statsMult[(int)multplier] * (stats.resetTimes*stats.resetTimes);
-        stats.bars[(int)subBar] += (subValue/50f) * stats.statsMult[(int)multplier] * (stats.resetTimes*stats.resetTimes);
+        stats.bars[(int)mainBar] += (mainValue) * stats.statsMult[(int)multplier] * (stats.resetTimes*stats.resetTimes);
+        stats.bars[(int)subBar] += (subValue) * stats.statsMult[(int)multplier] * (stats.resetTimes*stats.resetTimes);
 
         if (stats.bars[(int)mainBar] > 100)
         {
@@ -106,7 +106,7 @@ public class StatsArea : Interacting
 
     void ChangeSouls()
     {
-        soulsText.text = "Souls: " + (int)stats.soul;
+        soulsText.text =  ((int)stats.soul).ToString();
     }
 
     public void Upgrade()

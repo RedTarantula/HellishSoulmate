@@ -29,9 +29,9 @@ MonoBehaviour:
   soulsPerClickUpgrade: 1
   soulsPerClickValue: 100
   scoreMinigameUpgrade: 0
-  scoreMinigameValue: 100
+  scoreMinigameValue: 10
   attributeUpgrade: 0
-  attributeValue: 1
+  attributeValue: 5
   resetTimes: 1
   tickets: 6
   DateTimes: 00000000000000000000000001000000

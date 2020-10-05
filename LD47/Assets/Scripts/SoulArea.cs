@@ -12,7 +12,7 @@ public class SoulArea : Interacting
     // Start is called before the first frame update
     void Start()
     {
-        souls.text = "Souls: " + ((int)stats.soul).ToString();
+        souls.text =  ((int)stats.soul).ToString();
 
         if(stats.DateTimes[(int)Demons.zaros] > 0)
         {
@@ -64,7 +64,7 @@ public class SoulArea : Interacting
 
     public void ChangeUI()
     {
-        souls.text = "Souls: " + ((int)stats.soul).ToString();
+        souls.text = ((int)stats.soul).ToString();
     }
 
     void SoulsPerSecond()

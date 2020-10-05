@@ -11,7 +11,7 @@ public class MiniGameCollectObject_Present : MiniGameCollectObject
 
     public override void OnCollect()
     {
-        
+        MiniGameController.Instance.AddPresents(1);
     }
 
 }

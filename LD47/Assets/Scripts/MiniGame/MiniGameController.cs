@@ -21,6 +21,9 @@ public class MiniGameController : MonoBehaviour
     public event StarGameHandler OnStarGame;
 
     [SerializeField]
+    private Stats _stats = default;
+
+    [SerializeField]
     private float _gameTime = 30f;
     public float GameTime { get => _gameTime; }
 
@@ -34,8 +37,15 @@ public class MiniGameController : MonoBehaviour
     [SerializeField]
     private Vector2 _spawnPointLeft = default;
 
+    private AudioSource _audioSource;
+
     private int _score;
     public int Score { get => _score; }
+
+    private int _presents;
+    public int Presents { get => _presents; }
+
+    public int Tickets { get => Mathf.RoundToInt((_score / 5f) * (_presents + 1)); }
 
     private bool _gameIsRunning;
     public bool GameIsRunning { get => _gameIsRunning; }
@@ -43,6 +53,7 @@ public class MiniGameController : MonoBehaviour
     void Awake()
     {
         sInstance = this;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -60,8 +71,22 @@ public class MiniGameController : MonoBehaviour
     void EndGame()
     {
         _gameIsRunning = false;
+        _stats.tickets += Tickets;
         OnEndGame?.Invoke();
         StopAllCoroutines();
+        StartCoroutine(MuteSoundCoroutine());
+    }
+
+    IEnumerator MuteSoundCoroutine()
+    {
+        float value = _audioSource.volume;
+        while (value >= 0f)
+        {
+            value -= Time.deltaTime;
+            _audioSource.volume = value;
+            yield return null;
+        }
+        _audioSource.Stop();
     }
 
     void Update()
@@ -123,6 +148,11 @@ public class MiniGameController : MonoBehaviour
     public void AddScore(int score)
     {
         _score += score;
+    }
+
+    public void AddPresents(int presents)
+    {
+        _presents += presents;
     }
 
     public void RemoveTime(float time)

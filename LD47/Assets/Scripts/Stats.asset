@@ -33,8 +33,10 @@ MonoBehaviour:
   attributeUpgrade: 0
   attributeValue: 5
   resetTimes: 1
+  tickets: 3
   DateTimes: 00000000000000000000000000000000
-  isqueiro: 0
-  florMurcha: 0
-  lingerie: 0
-  ursinho: 0
+  isqueiro: 9
+  florMurcha: 10
+  lingerie: 10
+  ursinho: 10
+  drink: 10

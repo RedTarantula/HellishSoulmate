@@ -9,18 +9,24 @@ public class MiniGameUI : MonoBehaviour
     
     [SerializeField]
     private TextMeshProUGUI _timeText = default;
-    [SerializeField]
-    private TextMeshProUGUI _scoreText = default;
     [Header("End Game")]
     [SerializeField]
     private GameObject _endGameCanvas = default;
     [SerializeField]
     private TextMeshProUGUI _endScoreText = default;
+    [SerializeField]
+    private TextMeshProUGUI _endPresentsText = default;
+    [SerializeField]
+    private TextMeshProUGUI _endTicketsText = default;
+    [SerializeField]
+    private GameObject _endGameButton = default;
 
     private MiniGameController _controller;
+    private AudioSource _audioSource;
 
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         _controller = MiniGameController.Instance;
         _controller.OnEndGame += HandleEndGame;
         _endGameCanvas.SetActive(false);
@@ -28,7 +34,6 @@ public class MiniGameUI : MonoBehaviour
 
     void Update()
     {
-        _scoreText.text = _controller.Score.ToString();
         UpdateTimeText();
     }
 
@@ -40,8 +45,45 @@ public class MiniGameUI : MonoBehaviour
 
     void HandleEndGame()
     {
-        _endScoreText.text = _controller.Score.ToString();
+        StartCoroutine(EndCoroutine());
+    }
+
+    IEnumerator EndCoroutine()
+    {
+        _endGameButton.SetActive(false);
+        
+        _endScoreText.text = "";
+        _endPresentsText.text = "";
+        _endTicketsText.text = "";
         _endGameCanvas.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+
+        for (int i = 0; i <= _controller.Score; i++)
+        {
+            _endScoreText.text = i.ToString();
+            _audioSource.Play();
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        yield return new WaitForSeconds(1f);
+        for (int i = 0; i <= _controller.Presents; i++)
+        {
+            _endPresentsText.text = i.ToString();
+            _audioSource.Play();
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        yield return new WaitForSeconds(1f);
+        for (int i = 0; i <= _controller.Tickets; i++)
+        {
+            _endTicketsText.text = i.ToString();
+            _audioSource.Play();
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        yield return new WaitForSeconds(1f);
+        _endGameButton.SetActive(true);
     }
 
 }

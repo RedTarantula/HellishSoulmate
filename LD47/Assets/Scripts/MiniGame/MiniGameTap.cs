@@ -26,13 +26,20 @@ public class MiniGameTap : MonoBehaviour
 
     private MiniGameThrower _thrower;
     private MiniGameCollectObject _collect;
+    private MiniGameController _controller;
 
     void Awake()
     {
+        _controller = GameObject.FindObjectOfType<MiniGameController>();
         _animator = GetComponent<Animator>();
         _thrower = GameObject.FindObjectOfType<MiniGameThrower>();
         _itemImage = _itemTap.GetComponent<Image>();
         Disable();
+    }
+
+    void Start()
+    {
+        _controller.OnEndGame += HandleEndGame;
     }
 
     public void Construct(int taps, MiniGameCollectObject collect)
@@ -80,6 +87,11 @@ public class MiniGameTap : MonoBehaviour
             // Instantiate(_tapEffectPrefab, Vector2.zero, Quaternion.identity);
             Instantiate(_collect.TapEffet, Vector2.zero, Quaternion.identity);
         }
+    }
+
+    private void HandleEndGame()
+    {
+        Disable();
     }
 
     void Disable()

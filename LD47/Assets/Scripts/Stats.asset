@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c78637986e09d343be7a9bf9ac640ac, type: 3}
   m_Name: Stats
   m_EditorClassIdentifier: 
-  soul: 35
+  soul: 0
   soulMult: 1
   bars:
   - 0
@@ -26,3 +26,15 @@ MonoBehaviour:
   - 1
   IdleUpgrade: 0
   IdleSoul: 10
+  soulsPerClickUpgrade: 0
+  soulsPerClickValue: 100
+  scoreMinigameUpgrade: 0
+  scoreMinigameValue: 100
+  attributeUpgrade: 0
+  attributeValue: 1
+  resetTimes: 1
+  DateTimes: 00000000000000000000000000000000
+  isqueiro: 0
+  florMurcha: 0
+  lingerie: 0
+  ursinho: 0

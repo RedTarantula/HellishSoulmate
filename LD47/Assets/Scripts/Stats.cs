@@ -13,14 +13,13 @@ public class Stats : ScriptableObject
     public float[] statsMult;
 
     [Header("upgrades")]
-    public bool IdleUpgrade;
+    public bool IdleUpgrade; // zaros
     public float IdleSoul;
-    public bool soulsPerClickUpgrade;
+    public bool soulsPerClickUpgrade; //Azza
     public float soulsPerClickValue;
-    public bool scoreMinigameUpgrade;
+    public bool scoreMinigameUpgrade; //Terrin
     public float scoreMinigameValue;
-
-    public bool attributeUpgrade;
+    public bool attributeUpgrade; //Akathiz
     public float attributeValue;
     public int resetTimes;
 

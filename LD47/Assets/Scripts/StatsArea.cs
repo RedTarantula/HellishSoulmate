@@ -30,6 +30,8 @@ public class StatsArea : Interacting
     private Vector3 aux;
     private bool owned;
 
+    public Transform sprite;
+
     private void Start()
     {
         aux = mainStatusImage.rectTransform.localScale;
@@ -48,6 +50,7 @@ public class StatsArea : Interacting
         if(owned)
         {
             ChangeStat();
+            StartCoroutine(Fade());
         }
         else
         {
@@ -122,6 +125,27 @@ public class StatsArea : Interacting
         }
     }
 
+    IEnumerator Fade() 
+    {
+        Vector3 aux = sprite.localScale;
+        for(int i= 1;i < 6;i++ )
+        {
+            aux.x +=0.05f;
+            aux.y +=0.05f;
+            sprite.localScale = aux;
+        }
+        
+       yield return new WaitForSeconds(0.1f);
+         for(int i= 6;i > 1;i-- )
+        {
+            aux.x -=0.05f;
+            aux.y -=0.05f;
+            sprite.localScale = aux;
+        }
+        
+       
+        //yield return null;
+    }
   
 
 }

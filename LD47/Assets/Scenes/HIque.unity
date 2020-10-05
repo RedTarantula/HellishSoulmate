@@ -5376,13 +5376,14 @@ MonoBehaviour:
   subStatusImage: {fileID: 927920674}
   subBar: 0
   subValue: -1
-  price: 50
-  upgradePrice: 100
+  price: 20
+  upgradePrice: 40
   multplier: 1
   soulsText: {fileID: 1007895450}
   priceUpgradeMultiplier: 1.25
   efectUpgradeMultiplier: 1.5
   stats: {fileID: 11400000, guid: eb818a63384abee4cb19e6662a7e79d3, type: 2}
+  sprite: {fileID: 259120606}
 --- !u!61 &259120604
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5681,7 +5682,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 60.100098, y: 123.49994}
+  m_AnchoredPosition: {x: 185, y: 123.49994}
   m_SizeDelta: {x: 120, y: 15}
   m_Pivot: {x: 1, y: 0}
 --- !u!1 &467825318
@@ -5742,6 +5743,7 @@ MonoBehaviour:
   priceUpgradeMultiplier: 1.25
   efectUpgradeMultiplier: 1.5
   stats: {fileID: 11400000, guid: eb818a63384abee4cb19e6662a7e79d3, type: 2}
+  sprite: {fileID: 467825322}
 --- !u!61 &467825320
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6854,7 +6856,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 60.100098, y: 51.49994}
+  m_AnchoredPosition: {x: 185, y: 51.49994}
   m_SizeDelta: {x: 120, y: 15}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &902815482
@@ -6928,7 +6930,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 60.100098, y: 159.49995}
+  m_AnchoredPosition: {x: 185, y: 159.49995}
   m_SizeDelta: {x: 120, y: 15}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &927920674
@@ -7270,13 +7272,14 @@ MonoBehaviour:
   subStatusImage: {fileID: 334103677}
   subBar: 1
   subValue: 1
-  price: 500
-  upgradePrice: 1000
+  price: 30
+  upgradePrice: 60
   multplier: 3
   soulsText: {fileID: 1007895450}
   priceUpgradeMultiplier: 1.25
   efectUpgradeMultiplier: 1.5
   stats: {fileID: 11400000, guid: eb818a63384abee4cb19e6662a7e79d3, type: 2}
+  sprite: {fileID: 1136919704}
 --- !u!212 &1136919703
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8633,7 +8636,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 60.100098, y: 87.5}
+  m_AnchoredPosition: {x: 185, y: 87.5}
   m_SizeDelta: {x: 120, y: 15}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1591742805
@@ -13552,13 +13555,14 @@ MonoBehaviour:
   subStatusImage: {fileID: 902815482}
   subBar: 3
   subValue: -1
-  price: 200
-  upgradePrice: 400
+  price: 50
+  upgradePrice: 100
   multplier: 2
   soulsText: {fileID: 1007895450}
   priceUpgradeMultiplier: 1.25
   efectUpgradeMultiplier: 1.5
   stats: {fileID: 11400000, guid: eb818a63384abee4cb19e6662a7e79d3, type: 2}
+  sprite: {fileID: 1868616943}
 --- !u!61 &1868616941
 BoxCollider2D:
   m_ObjectHideFlags: 0

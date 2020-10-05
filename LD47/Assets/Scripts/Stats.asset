@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c78637986e09d343be7a9bf9ac640ac, type: 3}
   m_Name: Stats
   m_EditorClassIdentifier: 
-  soul: 0
+  soul: 9899
   soulMult: 1
   bars:
+  - 57
   - 0
-  - 0
-  - 0
+  - 30
   - 0
   statsMult:
   - 1
@@ -36,7 +36,7 @@ MonoBehaviour:
   tickets: 3
   DateTimes: 00000000000000000000000000000000
   isqueiro: 9
-  florMurcha: 10
-  lingerie: 10
-  ursinho: 10
-  drink: 10
+  florMurcha: 0
+  lingerie: 0
+  ursinho: 0
+  drink: 0

@@ -11,6 +11,8 @@ public class StoreUI : MonoBehaviour
     [SerializeField]
     private Stats _stats = default;
 
+    public GameObject voltaUI;
+
     [Header("Tickets")]
     [SerializeField]
     private TextMeshProUGUI _ticketsAmount = default;
@@ -86,6 +88,7 @@ public class StoreUI : MonoBehaviour
 
     void HandleClose()
     {
+        voltaUI.SetActive(true);
         gameObject.SetActive(false);
     }
 

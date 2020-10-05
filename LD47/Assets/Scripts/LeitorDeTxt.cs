@@ -30,9 +30,9 @@ public class LeitorDeTxt : MonoBehaviour
     public void LerTxt ()
     {
         
-
-        StreamReader leitor = new StreamReader(path);
-        dialogos = leitor.ReadToEnd().Split('#');
+        var textFile = Resources.Load<TextAsset>("Dialogos");
+        dialogos = textFile.text.Split('#');
+        
     }
 
     public string RetornaDialogo(int personagem)

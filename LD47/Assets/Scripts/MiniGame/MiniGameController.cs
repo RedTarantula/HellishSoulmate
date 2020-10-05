@@ -56,12 +56,7 @@ public class MiniGameController : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
     }
 
-    void Start()
-    {
-        StartGame();
-    }
-
-    void StartGame()
+    public void StartGame()
     {
         _gameIsRunning = true;
         OnStarGame?.Invoke();

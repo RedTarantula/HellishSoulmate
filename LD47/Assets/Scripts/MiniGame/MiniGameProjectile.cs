@@ -43,6 +43,7 @@ public class MiniGameProjectile : MonoBehaviour
         if (collectObject)
         {
             Destroy(_rigidbody);
+            Destroy(GetComponent<Collider2D>());
 
             _collectObject = collectObject;
             _collectObject.OnGrab();
@@ -56,7 +57,7 @@ public class MiniGameProjectile : MonoBehaviour
 
     void Destroy()
     {
-        if (_collectObject) _collectObject.OnCollect();
+        if (_collectObject) _collectObject.OnPull();
         _collectObject = null;
         OnDestroy?.Invoke();
         Destroy(gameObject);

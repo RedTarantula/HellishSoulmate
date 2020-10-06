@@ -40,8 +40,7 @@ public class TouchSystem : MonoBehaviour
             }
 
         }
-
-        if(Input.GetMouseButtonDown(0))
+        else if(Input.GetMouseButtonDown(0))
         {
             Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 

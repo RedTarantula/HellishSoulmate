@@ -20,6 +20,6 @@ public class ChangeScene : MonoBehaviour
 
     public void GoToBar()
     {
-        SceneManager.LoadScene("Aline");
+        SceneManager.LoadScene("Bar");
     }
 }

@@ -61,8 +61,8 @@ public class MiniGameProjectile : MonoBehaviour
         {
             if (_collectObject) _collectObject.OnPull();
             _collectObject = null;
-            OnDestroy?.Invoke();
         }
+        OnDestroy?.Invoke();
         Destroy(gameObject);
     }
 

@@ -630,6 +630,6 @@ public class Dialogos : Interacting
     }
     public void SaiDoDate()
     {
-        SceneManager.LoadScene("Aline");
+        SceneManager.LoadScene("Bar");
     }
 }

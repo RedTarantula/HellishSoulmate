@@ -45,22 +45,41 @@ public class MiniGameController : MonoBehaviour
     private int _presents;
     public int Presents { get => _presents; }
 
-    public int Tickets { get => Mathf.RoundToInt((_score / 5f) * (_presents + 1)); }
+    public int Tickets { get => Mathf.RoundToInt((_score / 3f) * (_presents + 1)); }
 
     private bool _gameIsRunning;
     public bool GameIsRunning { get => _gameIsRunning; }
+
+    public float Souls { get => _stats.soul; set => _stats.soul = value; }
 
     void Awake()
     {
         sInstance = this;
         _audioSource = GetComponent<AudioSource>();
     }
-
+    private void Start()
+    {
+        StartMusic();
+    }
     public void StartGame()
     {
+        ClearScore();
         _gameIsRunning = true;
         OnStarGame?.Invoke();
         StartCoroutine(SpawnCoroutine());
+
+        StartMusic();
+
+    }
+
+    private void StartMusic()
+    {
+        if (_audioSource.isPlaying)
+            return;
+
+        _audioSource.volume = 0f;
+        _audioSource.Play();
+        StartCoroutine(PlaySoundCoroutine());
     }
 
     void EndGame()
@@ -71,6 +90,7 @@ public class MiniGameController : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(MuteSoundCoroutine());
     }
+
 
     IEnumerator MuteSoundCoroutine()
     {
@@ -83,6 +103,19 @@ public class MiniGameController : MonoBehaviour
         }
         _audioSource.Stop();
     }
+    IEnumerator PlaySoundCoroutine()
+    {
+        float value = _audioSource.volume;
+        while (value < 1f)
+        {
+            value += Time.deltaTime;
+            if (value > 1f) value = 1f;
+            _audioSource.volume = value;
+            yield return null;
+        }
+    }
+
+
 
     void Update()
     {
@@ -138,6 +171,13 @@ public class MiniGameController : MonoBehaviour
         }
 
         return null;
+    }
+
+    public void ClearScore()
+    {
+        _score = 0;
+        _presents = 0;
+        _gameTime = 30;
     }
 
     public void AddScore(int score)

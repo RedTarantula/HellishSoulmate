@@ -13,7 +13,7 @@ public class CreditsButton : MonoBehaviour
     
     public void GoBack()
     {
-        SceneManager.LoadScene("HIque");
+        SceneManager.LoadScene("Hell");
     }
 
 }

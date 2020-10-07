@@ -18,7 +18,7 @@ public class GiftShop : MonoBehaviour
     }
     public void Volta()
     {
-        SceneManager.LoadScene("HIque");
+        SceneManager.LoadScene("Hell");
     }
     
 }

@@ -25,6 +25,8 @@ public class MiniGameUI : MonoBehaviour
     private TextMeshProUGUI _endTicketsText = default;
     [SerializeField]
     private GameObject _endGameButton = default;
+    [SerializeField]
+    private GameObject _replayGameButton = default;
 
     private MiniGameController _controller;
     private AudioSource _audioSource;
@@ -63,10 +65,24 @@ public class MiniGameUI : MonoBehaviour
         StartCoroutine(EndCoroutine());
     }
 
+    void HandleResetGame()
+    {
+        if (_controller.Souls > 120)
+        {
+            _controller.Souls -= 120;
+            _endGameCanvas.SetActive(false);
+            _hasStarted = false;
+            _startGameCanvas.SetActive(true);
+        }
+    }
+
     IEnumerator EndCoroutine()
     {
         _endGameButton.SetActive(false);
-        _endGameButton.GetComponent<Button>().onClick.AddListener(() => SceneManager.LoadScene("Aline"));
+        _endGameButton.GetComponent<Button>().onClick.AddListener(() => SceneManager.LoadScene("Bar"));
+
+        _replayGameButton.SetActive(false);
+        _replayGameButton.GetComponent<Button>().onClick.AddListener(()=>HandleResetGame());
         
         _endScoreText.text = "";
         _endPresentsText.text = "";
@@ -100,6 +116,8 @@ public class MiniGameUI : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         _endGameButton.SetActive(true);
+        _replayGameButton.SetActive(true);
     }
+
 
 }

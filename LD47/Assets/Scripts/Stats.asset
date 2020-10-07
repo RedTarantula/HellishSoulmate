@@ -25,18 +25,18 @@ MonoBehaviour:
   - 1
   - 1
   IdleUpgrade: 0
-  IdleSoul: 10
+  IdleSoul: 0
   soulsPerClickUpgrade: 1
   soulsPerClickValue: 1
   scoreMinigameUpgrade: 0
   scoreMinigameValue: 10
-  attributeUpgrade: 0
+  attributeUpgrade: 1
   attributeValue: 5
   resetTimes: 1
-  tickets: 0
-  DateTimes: 00000000000000000000000000000000
+  tickets: 212
+  DateTimes: 00000000010000000000000000000000
   isqueiro: 0
   florMurcha: 0
-  lingerie: 0
+  lingerie: 1
   ursinho: 0
-  drink: 0
+  drink: 1
